@@ -1,0 +1,784 @@
+Nov 06, 2018 6:34:45 AM cs601.ChatApplication startApplication
+INFO: Server started..
+
+Nov 06, 2018 6:35:00 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:35:00 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET / HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:35:00 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 6:35:02 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:35:02 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:35:02 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:35:02 AM cs601.ChatHandler doGet
+INFO: This is get method
+Nov 06, 2018 6:35:09 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:35:09 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:35:09 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 11
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=hey
+Nov 06, 2018 6:35:09 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:35:09 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:35:09 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"hey"}
+Nov 06, 2018 6:35:09 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:35:09 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:35:09 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541514909.060700","message":{"text":"hey","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541514909.060700"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}
+Nov 06, 2018 6:35:26 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:35:26 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:35:26 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 11
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=hey
+Nov 06, 2018 6:35:26 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:35:26 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:35:26 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"hey"}
+Nov 06, 2018 6:35:26 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:35:26 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:35:26 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541514926.060800","message":{"text":"hey","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541514926.060800"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}
+Nov 06, 2018 6:35:29 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:35:29 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:35:29 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:35:29 AM cs601.ChatHandler doGet
+INFO: This is get method
+Nov 06, 2018 6:35:34 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:35:34 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:35:34 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 13
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=there
+Nov 06, 2018 6:35:34 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:35:34 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:35:34 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"there"}
+Nov 06, 2018 6:35:34 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:35:34 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:35:34 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541514934.060900","message":{"text":"there","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541514934.060900"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}
+Nov 06, 2018 6:35:46 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:35:46 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:35:46 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:35:46 AM cs601.ChatHandler doGet
+INFO: This is get method
+Nov 06, 2018 6:35:52 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:35:52 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:35:52 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 23
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=testing+testing
+Nov 06, 2018 6:35:52 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:35:52 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:35:52 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"testing testing"}
+Nov 06, 2018 6:35:53 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:35:53 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:35:53 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541514953.061000","message":{"text":"testing testing","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541514953.061000"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}
+Nov 06, 2018 6:35:59 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:35:59 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:35:59 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:35:59 AM cs601.ChatHandler doGet
+INFO: This is get method
+Nov 06, 2018 6:36:08 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:36:08 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:36:08 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 41
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=anyone+awake%3F%3F%3F%3F%3F%3F%3F
+Nov 06, 2018 6:36:08 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:36:08 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:36:08 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"anyone awake???????"}
+Nov 06, 2018 6:36:08 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:36:08 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:36:08 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541514968.061100","message":{"text":"anyone awake???????","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541514968.061100"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}
+Nov 06, 2018 6:36:13 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:36:13 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:36:13 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:36:13 AM cs601.ChatHandler doGet
+INFO: This is get method
+Nov 06, 2018 6:36:48 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:36:48 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:36:48 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 31
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=hahahahahahahahahahahah
+Nov 06, 2018 6:36:48 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:36:48 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:36:48 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"hahahahahahahahahahahah"}
+Nov 06, 2018 6:36:48 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:36:48 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:36:48 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541515008.061200","message":{"text":"hahahahahahahahahahahah","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541515008.061200"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}
+Nov 06, 2018 6:36:57 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:36:57 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:36:57 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:36:57 AM cs601.ChatHandler doGet
+INFO: This is get method
+Nov 06, 2018 6:37:10 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:37:10 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:37:10 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 18
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=I+am+tried
+Nov 06, 2018 6:37:10 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:37:10 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:37:10 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"I am tried"}
+Nov 06, 2018 6:37:10 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:37:10 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:37:10 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541515030.061300","message":{"text":"I am tried","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541515030.061300"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}
+Nov 06, 2018 6:37:33 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:37:33 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET / HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:37:33 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 6:37:36 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:37:36 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:37:36 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:37:36 AM cs601.ChatHandler doGet
+INFO: This is get method
+Nov 06, 2018 6:38:03 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:38:03 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET / HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:38:03 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 6:38:15 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:38:15 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:38:15 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:38:15 AM cs601.ChatHandler doGet
+INFO: This is get method
+Nov 06, 2018 6:38:21 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:38:21 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:38:21 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 13
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=there
+Nov 06, 2018 6:38:21 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:38:21 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:38:21 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"there"}
+Nov 06, 2018 6:38:22 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:38:22 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:38:22 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541515101.061400","message":{"text":"there","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541515101.061400"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}
+Nov 06, 2018 6:38:26 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:38:26 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:38:26 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 11
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=you
+Nov 06, 2018 6:38:26 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:38:26 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:38:26 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"you"}
+Nov 06, 2018 6:38:26 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:38:26 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:38:26 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541515106.061500","message":{"text":"you","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541515106.061500"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}
+Nov 06, 2018 6:38:29 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:38:29 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:38:29 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:38:29 AM cs601.ChatHandler doGet
+INFO: This is get method
+Nov 06, 2018 6:38:39 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:38:39 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:38:39 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 19
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=should+code
+Nov 06, 2018 6:38:39 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:38:39 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:38:39 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"should code"}
+Nov 06, 2018 6:38:39 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:38:39 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:38:39 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541515119.061600","message":{"text":"should code","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541515119.061600"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}
+Nov 06, 2018 6:38:44 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:38:44 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:38:44 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:38:44 AM cs601.ChatHandler doGet
+INFO: This is get method
+Nov 06, 2018 6:38:49 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:38:49 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:38:49 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 21
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=get+up+people
+Nov 06, 2018 6:38:49 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:38:49 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:38:49 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"get up people"}
+Nov 06, 2018 6:38:49 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:38:49 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:38:49 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541515129.061700","message":{"text":"get up people","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541515129.061700"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}
+Nov 06, 2018 6:57:11 AM cs601.ChatApplication startApplication
+INFO: Server started..
+
+Nov 06, 2018 6:57:16 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:57:16 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 6:57:16 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:57:16 AM cs601.ChatHandler doGet
+INFO: This is get method
+Nov 06, 2018 6:57:22 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:57:22 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:57:22 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 17
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=hey+there
+Nov 06, 2018 6:57:22 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:57:22 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:57:22 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"hey there"}
+Nov 06, 2018 6:57:22 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:57:22 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:57:22 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541516242.062100","message":{"text":"hey there","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541516242.062100"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}
+Nov 06, 2018 6:57:35 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:57:35 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:57:35 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 11
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=you
+Nov 06, 2018 6:57:35 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:57:35 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:57:35 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"you"}
+Nov 06, 2018 6:57:35 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:57:35 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:57:35 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541516255.062200","message":{"text":"you","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541516255.062200"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}
+Nov 06, 2018 6:58:42 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 6:58:42 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 6:58:42 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /slackbot HTTP/1.1
+ Headers:Host: localhost:8090
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8090
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8090/slackbot
+Content-Length: 11
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:message=you
+Nov 06, 2018 6:58:42 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 6:58:42 AM cs601.ChatHandler doPost
+INFO: This is post method
+Nov 06, 2018 6:58:42 AM cs601.ChatHandler sendToSlack
+INFO: 
+Slack request body (json):  {"token":"Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782","channel":"#project3","text":"you"}
+Nov 06, 2018 6:58:42 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Code:  200
+Nov 06, 2018 6:58:42 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response Message: OK
+Nov 06, 2018 6:58:42 AM cs601.ChatHandler sendToSlack
+INFO: 
+Response from slack : {"ok":true,"channel":"CD508HJ5U","ts":"1541516322.062300","message":{"text":"you","username":"Project 3 App","bot_id":"BDU02JQQ3","type":"message","subtype":"bot_message","ts":"1541516322.062300"},"warning":"missing_charset","response_metadata":{"warnings":["missing_charset"]}}

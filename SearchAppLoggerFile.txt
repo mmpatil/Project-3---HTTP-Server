@@ -1,0 +1,443 @@
+Nov 06, 2018 7:01:41 AM cs601.SearchApplication startApplication
+INFO: Server started...
+Nov 06, 2018 7:01:53 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:01:53 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET / HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:01:53 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 7:01:58 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:01:58 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:01:58 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 7:01:58 AM cs601.ReviewSearchHandler doGet
+INFO: This is get method
+Nov 06, 2018 7:01:59 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:01:59 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:01:59 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 7:01:59 AM cs601.ReviewSearchHandler doGet
+INFO: This is get method
+Nov 06, 2018 7:02:06 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:02:06 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 7:02:06 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /reviewsearch HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8080/reviewsearch
+Content-Length: 9
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:query=abc
+Nov 06, 2018 7:02:06 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 7:02:06 AM cs601.ReviewSearchHandler doPost
+INFO: This is post method
+Nov 06, 2018 7:02:12 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:02:12 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch?name=abc HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:02:12 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 7:02:13 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:02:13 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch?name=abc HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:02:13 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 7:02:20 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:02:20 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch?name=abc HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:02:20 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 7:02:30 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:02:30 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch?name=abc HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:02:30 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 7:03:10 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:03:10 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch?name=abc HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:03:10 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 7:03:12 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:03:12 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:03:12 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 7:03:12 AM cs601.ReviewSearchHandler doGet
+INFO: This is get method
+Nov 06, 2018 7:03:13 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:03:13 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:03:13 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 7:03:13 AM cs601.ReviewSearchHandler doGet
+INFO: This is get method
+Nov 06, 2018 7:03:21 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:03:21 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET / HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:03:21 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 7:03:25 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:03:25 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:03:25 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 7:03:25 AM cs601.ReviewSearchHandler doGet
+INFO: This is get method
+Nov 06, 2018 7:03:26 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:03:26 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:03:26 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 7:03:26 AM cs601.ReviewSearchHandler doGet
+INFO: This is get method
+Nov 06, 2018 7:03:29 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:03:29 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 7:03:29 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /reviewsearch HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8080/reviewsearch
+Content-Length: 9
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:query=hey
+Nov 06, 2018 7:03:29 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 7:03:29 AM cs601.ReviewSearchHandler doPost
+INFO: This is post method
+Nov 06, 2018 7:04:07 AM cs601.SearchApplication startApplication
+INFO: Server started...
+Nov 06, 2018 7:04:12 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:04:12 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:04:12 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 7:04:12 AM cs601.ReviewSearchHandler doGet
+INFO: This is get method
+Nov 06, 2018 7:04:18 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:04:18 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch?name=abc HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:04:18 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 7:04:19 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:04:19 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch?name=abc HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:04:19 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 7:04:23 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:04:23 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch?name=abc HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:04:23 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 7:04:40 AM cs601.SearchApplication startApplication
+INFO: Server started...
+Nov 06, 2018 7:04:43 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:04:43 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch?name=abc HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:04:43 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 7:04:48 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:04:48 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch?name=abc HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:04:48 AM cs601.HttpServer run
+INFO: Page not found in server
+Nov 06, 2018 7:05:14 AM cs601.SearchApplication startApplication
+INFO: Server started...
+Nov 06, 2018 7:05:18 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:06:25 AM cs601.SearchApplication startApplication
+INFO: Server started...
+Nov 06, 2018 7:06:31 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:06:31 AM cs601.HttpServer run
+INFO: 
+ RequestLine:GET /reviewsearch?name=abc HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+ Body:
+Nov 06, 2018 7:06:31 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 7:06:31 AM cs601.ReviewSearchHandler doGet
+INFO: This is get method
+Nov 06, 2018 7:06:44 AM cs601.HttpServer run
+INFO: In server read headers
+Nov 06, 2018 7:06:44 AM cs601.HttpServer run
+INFO: In server read body
+Nov 06, 2018 7:06:44 AM cs601.HttpServer run
+INFO: 
+ RequestLine:POST /reviewsearch HTTP/1.1
+ Headers:Host: localhost:8080
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded
+Origin: http://localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Referer: http://localhost:8080/reviewsearch?name=abc
+Content-Length: 16
+Cookie: username-localhost-8888="2|1:0|10:1541119866|23:username-localhost-8888|44:YmE4YTMxNzU0YjhkNDZjZDlhYTM3ZTc4OTZiNzVmYjg=|efc33a35a57f9a9145774460538a45fcc9fd0027c4d8adbf185e5d516ded0b09"; _xsrf=2|8360c6e6|6531f539c8d8fda6e5393e3a57f01d1a|1541119705
+
+ Body:query=they+super
+Nov 06, 2018 7:06:44 AM cs601.HttpServer run
+INFO: Mapping contains path
+Nov 06, 2018 7:06:44 AM cs601.ReviewSearchHandler doPost
+INFO: This is post method

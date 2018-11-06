@@ -1,0 +1,1 @@
+{"port": 8080, "loggerFile" : "SearchAppLoggerFile.txt","reviewInputFiles": "Cell_Phones_and_Accessories_5.json", "qaInputFiles": "qa_Cell_Phones_and_Accessories.json", "poolSize": 5}
