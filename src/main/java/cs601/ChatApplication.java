@@ -19,6 +19,11 @@ public class ChatApplication {
 		return configuration;
 	}
 
+	
+	/**
+	 * Constructor
+	 * @param path Path of Configuration file
+	 */
 	public ChatApplication(Path path) {
 		configuration = ConfigurationFileForChatApplication.getConfigurations(path);
 	}
@@ -37,9 +42,13 @@ public class ChatApplication {
 		}
 	}
 
+	
+	/**
+	 * Starts the listening socket for this application
+	 * @param configuration Configurations for this application
+	 */
 	public void startApplication(ConfigurationFileForChatApplication configuration) {
-//		MyLogger.setLogger(configuration.getLoggerFile());
-//		Logger logger = MyLogger.getLogger();
+
 		try {
 			ServerSocket serverSocket = new ServerSocket(configuration.getPort());
 
@@ -48,7 +57,6 @@ public class ChatApplication {
 			ExecutorService executor = Executors.newFixedThreadPool(configuration.getPoolSize());
 
 			while(true) {
-				//				System.out.println("\n\n\nThread :"+Thread.currentThread().getName());
 				Socket socket = serverSocket.accept();
 				HttpServer httpServer = new HttpServer(socket); 
 				httpServer.addMapping("/slackbot", new ChatHandler());
@@ -60,6 +68,12 @@ public class ChatApplication {
 		}
 	}
 
+	
+	/**
+	 * Checks if the command Line arguments are correct
+	 * @param args
+	 * @return true is correct false if not
+	 */
 	public static boolean checkCommandLineArgument(String[] args) {
 		boolean valid = false;
 		if(args.length == 1 && args[0].endsWith(".json")) {

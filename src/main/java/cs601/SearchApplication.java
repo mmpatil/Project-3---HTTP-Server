@@ -19,6 +19,10 @@ public class SearchApplication {
 	private static InvertedIndex index ;
 	private static ConfigurationFileForSearch configuration ;
 	
+	/**
+	 * Constructor
+	 * @param path Path of Configuration file
+	 */
 	public SearchApplication(Path path) {
 		configuration = ConfigurationFileForSearch.getConfigurations(path);
 		index = AmazonSearch.createInvertedIndex(configuration.getReviewInputFiles(),configuration.getQaInputFiles());
@@ -40,6 +44,10 @@ public class SearchApplication {
 		}
 	}
 
+	/**
+	 * Starts the listening socket for this application
+	 * @param configuration Configurations for this application
+	 */
 	public void startApplication(ConfigurationFileForSearch configuration) {
 		try {
 			ServerSocket serverSocket = new ServerSocket(configuration.getPort());
@@ -61,6 +69,11 @@ public class SearchApplication {
 		}
 	}
 
+	/**
+	 * Checks if the command Line arguments are correct
+	 * @param args
+	 * @return true is correct false if not
+	 */
 	public static boolean checkCommandLineArgument(String[] args) {
 		boolean valid = false;
 		if(args.length == 1 && args[0].endsWith(".json")) {

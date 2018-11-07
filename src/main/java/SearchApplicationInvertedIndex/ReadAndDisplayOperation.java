@@ -17,7 +17,7 @@ public class ReadAndDisplayOperation {
 	 * @param <T>
 	 * 
 	 * @param path - Path of the file containing json elements.
-	 * @param type - The type of Object the file contains (Review OR QA).
+	 * @param type - The type of T the file contains (Review OR QA).
 	 * @param asinList - The asin HashMap to be created.
 	 * @return - The updated inverted index.
 	 */

@@ -15,131 +15,172 @@ public class RequestParser {
 
 	}
 
+	/**
+	 * Constructor parsing the request
+	 * @param httpRequest the request object to be parsed
+	 */
 	public RequestParser(HTTPRequest httpRequest) {
 
-		//		if(isValidRequestLine(httpRequest.getRequestLine())) {
-		//			this.requestLineParts = split(httpRequest.getRequestLine()," ");
-		//
-		//			//set request method
-		//			httpRequest.setMethod(this.requestLineParts[0]);
-		//
-		//			//check if request line contains queries
-		//			if(checkifContains(this.requestLineParts[1], "\\?") == true){
-		//				if(isValidQuery(this.requestLineParts[1])) {
-		//					this.pathAndQueries = split(this.requestLineParts[1],"?");
-		//					httpRequest.setPath(this.pathAndQueries[0]);
-		//					if(checkifContains(this.pathAndQueries[1],"&")) {
-		//						parseMultipleQueries(this.pathAndQueries[1],httpRequest);
-		//					}
-		//					else 
-		//					{
-		//						if(checkifContains(this.pathAndQueries[1],"=")) {
-		//							this.queries = split(this.pathAndQueries[1],"=");
-		//							if(queries[0].equals(SearchApplicationConstants.QUERY)) {
-		//								httpRequest.setQuery(queries[0]);
-		//							}
-		//						}
-		//					}
-		//				}
-		//			}
-		//			else {
-		//				httpRequest.setPath(this.requestLineParts[1]);
-		//			}
-		//		}
+		if(isValidRequestLine(httpRequest.getRequestLine())) {
+			this.requestLineParts = split(httpRequest.getRequestLine()," ");
 
-		//check if contains queries
-		//check if contains multiple queries
-		//check if contains if valid query
-
-
-		String[] splitLine = httpRequest.getRequestLine().split(" ");
-		if(splitLine.length == 3) {
-			httpRequest.setMethod(splitLine[0]);
-			if(splitLine[1].contains("?")) {
-				String[] pathAndQuery = splitLine[1].split("\\?");
-				if(pathAndQuery.length == 2) {
-					httpRequest.setPath(pathAndQuery[0]);
-					if(pathAndQuery[1].contains("&")) {
-						String[] queries = pathAndQuery[1].split("&");
-						for(String query:queries) {
-							if(query.contains("=")) {
-								String[] queryValue = query.split("=");
-								if(!this.queriesHashmap.containsKey(queryValue[0])) {
-									this.queriesHashmap.put(queryValue[0], queryValue[1]);
-								}
-							}
-						}
+			//set request method
+			if(!this.requestLineParts[0].trim().equals("")) {
+				httpRequest.setMethod(this.requestLineParts[0]);
+			}
+			//check if request line contains queries
+			if(checkifContains(this.requestLineParts[1], "?") == true){
+				if(isValidQuery(this.requestLineParts[1])) {
+					this.pathAndQueries = split(this.requestLineParts[1],"\\?");
+					if(!this.pathAndQueries[0].trim().equals("")) {
+						httpRequest.setPath(this.pathAndQueries[0]);
+					}
+					if(checkifContains(this.pathAndQueries[1],"&")) {
+						parseMultipleQueries(this.pathAndQueries[1],httpRequest);
+					}
+					else if(checkifContains(this.pathAndQueries[1], "=")) {
+						parseSingleQueries(this.pathAndQueries[1],httpRequest);
 					}
 				}
 			}
 			else {
-				httpRequest.setPath(splitLine[1]);
+				if(!this.requestLineParts[1].trim().equals("")) {
+					httpRequest.setPath(this.requestLineParts[1]);
+				}
+			}
+			if(!this.requestLineParts[2].trim().equals("")) {
+				checkHTTPVersion(requestLineParts[2],httpRequest);
 			}
 			
-			if(splitLine[2].equals("HTTP/1.0\r") || splitLine[2].equals("HTTP/1.1\r") ||splitLine[2].equals("HTTP/1.0") || splitLine[2].equals("HTTP/1.1") ) {
-				httpRequest.setHttpVersion(splitLine[2]);
-			}else {
-				(MyLogger.getLogger()).log(Level.INFO, "HTTP version not valid");
-			}
+			//parse the body if the request contains body
+			parseBody(httpRequest);
 
-			if(!httpRequest.getBody().trim().equals("")) {
-				parseBody(httpRequest);
-			}
+			setQueryforRequest(httpRequest);
 
-			if(httpRequest.getPath().equals(SearchApplicationConstants.REVIEW_SEARCH_PATH)) {
-				if(queriesHashmap.containsKey(SearchApplicationConstants.QUERY)) {
-					httpRequest.setQuery(queriesHashmap.get(SearchApplicationConstants.QUERY));
-				}
-			}
-			else if(httpRequest.getPath().equals(SearchApplicationConstants.ASIN_PATH)) {
-				if(queriesHashmap.containsKey(SearchApplicationConstants.ASIN)) {
-					httpRequest.setQuery(queriesHashmap.get(SearchApplicationConstants.ASIN));
-				}
-			}
-			else if(httpRequest.getPath().equals(SearchApplicationConstants.SLACK_BOT_PATH)) {
-				if(queriesHashmap.containsKey(SearchApplicationConstants.MESSAGE)) {
-					httpRequest.setQuery(queriesHashmap.get(SearchApplicationConstants.MESSAGE));
-				}
-			}
 		}else {
-			(MyLogger.getLogger()).log(Level.INFO, "In parser set bad request");
 			httpRequest.setBadRequest(true);
 		}
 	}
 
-	private void parseBody(HTTPRequest httpRequest) {
-		String postBody = httpRequest.getBody();
-		if(postBody.contains("&")) {
-			this.queries = split(postBody,"&");
-			for(String query:queries) {
-				if(checkifContains(query, "=")){
-					String[] keyValue = split(query,"=");
-					this.queriesHashmap.put(keyValue[0], keyValue[1]);
+	/**
+	 * 
+	 * @param httpRequest to be set
+	 */
+	private void setQueryforRequest(HTTPRequest httpRequest) {
+		if(httpRequest.getPath().equals(SearchApplicationConstants.REVIEW_SEARCH_PATH)) {
+			if(queriesHashmap.containsKey(SearchApplicationConstants.QUERY)) {
+				httpRequest.setQuery(queriesHashmap.get(SearchApplicationConstants.QUERY));
+			}
+		}
+		else if(httpRequest.getPath().equals(SearchApplicationConstants.ASIN_PATH)) {
+			if(queriesHashmap.containsKey(SearchApplicationConstants.ASIN)) {
+				httpRequest.setQuery(queriesHashmap.get(SearchApplicationConstants.ASIN));
+			}
+		}
+		else if(httpRequest.getPath().equals(SearchApplicationConstants.SLACK_BOT_PATH)) {
+			if(queriesHashmap.containsKey(SearchApplicationConstants.MESSAGE)) {
+				httpRequest.setQuery(queriesHashmap.get(SearchApplicationConstants.MESSAGE));
+			}
+		}
+	}
+
+	/**
+	 * Checks the HTTP version
+	 * @param line containg the HTTPVersion
+	 * @param httpRequest the request to be updated
+	 * @return
+	 */
+	public boolean checkHTTPVersion(String line,HTTPRequest httpRequest) {
+		boolean result = false;
+		if(line.equals("HTTP/1.0\r") || line.equals("HTTP/1.1\r") ||line.equals("HTTP/1.0") || line.equals("HTTP/1.1") ) {
+			httpRequest.setHttpVersion(line);
+			result = true;
+		}
+		return result;
+	}
+
+	/**
+	 * Parses the body
+	 * @param httpRequest the request to be updated
+	 */
+	public void parseBody(HTTPRequest httpRequest) {
+		if(!httpRequest.getBody().trim().equals("")) {
+			String postBody = httpRequest.getBody();
+			if(postBody.contains("&")) {
+				this.queries = split(postBody,"&");
+				if(this.queries!=null) {
+					for(String query:queries) {
+						if(checkifContains(query, "=")){
+							String[] keyValue = split(query,"=");
+							if(keyValue.length == 2) {
+								this.queriesHashmap.put(keyValue[0], keyValue[1]);
+							}
+						}
+					}
+				}
+			}else if(checkifContains(postBody, "=")){
+				String[] keyValue = split(postBody,"=");
+				if(keyValue.length == 2) {
+					if(keyValue[0].equals("query")) {
+						this.queriesHashmap.put(keyValue[0], keyValue[1]);
+					}else if(keyValue[0].equals("asin")){
+						this.queriesHashmap.put(keyValue[0], keyValue[1]);
+					}else if(keyValue[0].equals("message")) {
+						this.queriesHashmap.put(keyValue[0], keyValue[1]);
+					}
 				}
 			}
-		}else if(checkifContains(postBody, "=")){
-			String[] keyValue = split(postBody,"=");
-			this.queriesHashmap.put(keyValue[0], keyValue[1]);
 		}
 	}
 
-	public void parseMultipleQueries(String line,HTTPRequest httpRequest) {
-		this.queries = split(line,"&");
-		for(String query:queries) {
-			if(checkifContains(query, "=")){
-				String[] keyValue = split(query,"=");
-				this.queriesHashmap.put(keyValue[0], keyValue[1]);
+	/**
+	 * Parses multiple queries
+	 * @param line containing multiple queries
+	 * @param httpRequest to be updated
+	 * @return
+	 */
+	public boolean parseMultipleQueries(String line,HTTPRequest httpRequest) {
+		boolean result = false;
+		if(checkifContains(line,"&")) {
+			this.queries = split(line,"&");
+			if(this.queries!=null) {
+				for(String query:queries) {
+					if(checkifContains(query, "=")){
+						String[] keyValue = split(query,"=");
+						if(keyValue.length == 2) {
+							this.queriesHashmap.put(keyValue[0], keyValue[1]);
+							result = true;
+						}
+					}
+				}
 			}
 		}
+		return result;
 	}
 
-	public void parseSingleQueries(String line,HTTPRequest httpRequest) {
+	/**
+	 * Parses single query
+	 * @param line containing single queries
+	 * @param httpRequest to be updated
+	 * @return
+	 */
+	public boolean parseSingleQueries(String line,HTTPRequest httpRequest) {
+		boolean result = false;
 		if(checkifContains(line,"=")) {
 			String[] keyValue = split(line,"=");
-			this.queriesHashmap.put(keyValue[0], keyValue[1]);
+			if(keyValue.length == 2) {
+				this.queriesHashmap.put(keyValue[0], keyValue[1]);
+				result = true;
+			}
 		}
+		return result;
 	}
 
+	/**
+	 * check if request Line is valid
+	 * @param requestLine to be verified
+	 * @return
+	 */
 	public boolean isValidRequestLine(String requestLine) {
 		boolean result = false;
 		if((requestLine.split(" ")).length == 3) {
@@ -148,10 +189,22 @@ public class RequestParser {
 		return result;
 	}
 
+	/**
+	 * Split the line for the regex
+	 * @param line line to be split
+	 * @param regex the split parameter
+	 * @return
+	 */
 	public String[] split (String line, String regex) {
 		return line.split(regex);	
 	}
 
+	/**
+	 * Check if the line contains the string
+	 * @param line line to check
+	 * @param regex the split parameter
+	 * @return
+	 */
 	public boolean checkifContains(String line,String regex) {
 		boolean result = false;
 		if(line.contains(regex)) {
@@ -160,9 +213,14 @@ public class RequestParser {
 		return result;
 	}
 
+	/**
+	 * check if request Query is valid
+	 * @param line to be verified
+	 * @return
+	 */
 	public boolean isValidQuery(String line) {
 		boolean result = false;
-		if((line.split("?")).length == 2) {
+		if((line.split("\\?")).length == 2) {
 			result = true;
 		}
 		return result;

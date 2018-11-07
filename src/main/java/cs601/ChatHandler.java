@@ -16,6 +16,11 @@ import com.google.gson.Gson;
 
 public class ChatHandler implements Handler{
 
+	
+	/*
+	 * (non-Javadoc)
+	 * @see cs601.Handler#handle(cs601.HTTPRequest, cs601.HTTPResponse)
+	 */
 	@Override
 	public void handle(HTTPRequest request,HTTPResponse response) {
 		if(request.getMethod().equals(HttpConstants.GET)) {
@@ -28,7 +33,15 @@ public class ChatHandler implements Handler{
 			this.doMethodNotFound(response);
 		}
 	}
+	
+	
 
+	/**
+	 * Builds the form if the HTTPMethod is GET
+	 * 
+	 * @param request Object containing information
+	 * @param response {@link HTTPResponse} object to be updated
+	 */
 	public void doGet(HTTPRequest request,HTTPResponse response) {
 		(MyLogger.getLogger()).log(Level.INFO, "This is get method");
 		HtmlBuilder html = new HtmlBuilder();
@@ -42,9 +55,15 @@ public class ChatHandler implements Handler{
 		formBuilder = html.createForm(formBuilder);
 		formBuilder = html.closeHtml(formBuilder);		
 		response.setHtmlPage(formBuilder.toString());
-		response.setHeader(HttpConstants.OK_HEADER);
+		response.setHeader(HttpConstants.OK_HEADER + "Content-Lenght: "+ ErrorPages.getContentLenght(formBuilder.toString())+"\n\r\n");
 	}
 
+	/**
+	 * Builds the form containg the result of the message sent if the HTTPMethod is POST
+	 * 
+	 * @param request Object containing information
+	 * @param response {@link HTTPResponse} object to be updated
+	 */
 	public void doPost(HTTPRequest request,HTTPResponse response) {
 		(MyLogger.getLogger()).log(Level.INFO, "This is post method");
 		HtmlBuilder html = new HtmlBuilder();
@@ -58,18 +77,18 @@ public class ChatHandler implements Handler{
 			String result = sendToSlack(request,response);
 			StringBuilder formBuilder = html.head();
 			if(response.getHeader().equals(HttpConstants.OK_HEADER)) {
-				formBuilder = html.startBody(formBuilder);
 				formBuilder = html.slackResponsePage(formBuilder);
 				formBuilder = html.createForm(formBuilder);
 				formBuilder = html.closeHtml(formBuilder);
 				response.setHtmlPage(formBuilder.toString());
+				response.setHeader(HttpConstants.OK_HEADER + "Content-Lenght: "+ ErrorPages.getContentLenght(formBuilder.toString())+"\n\r\n");
 			}
 			else {
-				response.setHeader(HttpConstants.OK_HEADER);
 				formBuilder = html.slackInvalidResponsePage(formBuilder);
 				formBuilder = html.createForm(formBuilder);
 				formBuilder = html.closeHtml(formBuilder);
 				response.setHtmlPage(formBuilder.toString());
+				response.setHeader(HttpConstants.OK_HEADER + "Content-Lenght: "+ ErrorPages.getContentLenght(formBuilder.toString())+"\n\r\n");
 			}
 		}
 		else {
@@ -77,6 +96,12 @@ public class ChatHandler implements Handler{
 		}
 	}
 
+	/**
+	 * Sends the message to slack channel by preparing a valid request
+	 * @param request Object having the request
+	 * @param response Object to generate the response
+	 * @return
+	 */
 	public String sendToSlack(HTTPRequest request,HTTPResponse response) {
 		String code ="";
 		String input = "";
@@ -137,24 +162,33 @@ public class ChatHandler implements Handler{
 		} catch (IOException e) {
 			(MyLogger.getLogger()).log(Level.SEVERE, "Error in connection object of HttpsUrlConnection:"+e.getMessage());
 		}
-		return input;
+		return response.getHeader();
 	}
 
+	
+	/**
+	 * Builds a form for Method Not found
+	 * @param response the object to be updated 
+	 */
 	public void doMethodNotFound(HTTPResponse response) {
 		HtmlBuilder html = new HtmlBuilder();
 		html.setTitle("Method Not Found");
 		StringBuilder methodNotFoundBuilder = html.head();
 		methodNotFoundBuilder = html.methodNotFoundPage(methodNotFoundBuilder);
 		response.setHtmlPage(methodNotFoundBuilder.toString());
-		response.setHeader(HttpConstants.METHOD_NOT_FOUND_HEADER);
+		response.setHeader(HttpConstants.METHOD_NOT_FOUND_HEADER + "Content-Lenght: "+ ErrorPages.getContentLenght(methodNotFoundBuilder.toString())+"\n\r\n");
 	}
 
+	/**
+	 * Builds a form for Bad Request
+	 * @param response the object to be updated 
+	 */
 	public void badRequestHtml(HTTPResponse response) {
 		HtmlBuilder html = new HtmlBuilder();
 		html.setTitle("Bad Request");
 		StringBuilder badRequestBuilder = html.head();
 		badRequestBuilder = html.badRequestPage(badRequestBuilder);
 		response.setHtmlPage(badRequestBuilder.toString());
-		response.setHeader(HttpConstants.BAD_REQUEST);
+		response.setHeader(HttpConstants.BAD_REQUEST + "Content-Lenght: "+ ErrorPages.getContentLenght(badRequestBuilder.toString())+"\n\r\n");
 	}
 }

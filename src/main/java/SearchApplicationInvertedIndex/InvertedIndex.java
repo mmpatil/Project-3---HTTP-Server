@@ -34,7 +34,7 @@ public class InvertedIndex {
 	 * and sets frequency to 1 else increments the frequency.
 	 * 
 	 * @param term - Key in inverted index.
-	 * @param obj - Object/Document that contains the term.
+	 * @param review - Review that contains the term.
 	 * @return 
 	 */
 	public void intoInvertedIndex(String term,Review review) {
@@ -66,8 +66,8 @@ public class InvertedIndex {
 		ArrayList<Review> details = null;
 		LinkedHashMap<Review,Integer> sorted = new LinkedHashMap<Review,Integer>();
 		if(sortedInvertedIndex.containsKey(term)) {
-			value = sortedInvertedIndex.get(term);
-			details = new ArrayList(value.keySet());
+			sorted = sortedInvertedIndex.get(term);
+			details = new ArrayList(sorted.keySet());
 		}
 		return details;
 	}

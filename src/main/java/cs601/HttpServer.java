@@ -1,13 +1,10 @@
 package cs601;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.logging.Level;
 
@@ -22,14 +19,19 @@ public class HttpServer implements Runnable{
 		connect = c;
 	}
 
+	/**
+	 * Adds the method to handler mappings in the server 
+	 * @param method passed in the request
+	 * @param handle the corresponding handler
+	 */
 	public void addMapping(String method,Handler handle) {
 		mappings.put(method, handle);
 	}
-
-	public void getMapping() {
-		System.out.println("\n Mapping is : " +mappings);
-	}
-
+	
+	/*
+	 * (non-Javadoc) Creates a client socket for a single connection 
+	 * @see java.lang.Runnable#run()
+	 */
 	@Override
 	public void run() {
 		try(InputStream instream = connect.getInputStream();
@@ -39,12 +41,13 @@ public class HttpServer implements Runnable{
 
 			HTTPResponse response = new HTTPResponse();
 
+			//reads requestLine
 			request.setRequestLine(oneLine(instream));
 
 			String input = oneLine(instream);
 
 			String header = "";
-
+			//reads headers
 			while(input!=null && !input.trim().isEmpty()) {
 				header += input +"\n";
 				input = oneLine(instream);
@@ -55,10 +58,10 @@ public class HttpServer implements Runnable{
 					}
 				}
 			}
-			(MyLogger.getLogger()).log(Level.INFO, "In server read headers");
 
 			request.setHeaders(header);
 
+			//get content lenght
 			int read = 0;
 			byte[] bytes = null; 
 			if(contentLenghtCount == 1) {
@@ -74,10 +77,10 @@ public class HttpServer implements Runnable{
 				(MyLogger.getLogger()).log(Level.INFO, "In server read body");
 			}
 
+			//sent the request to parser
 			RequestParser requestParse = new RequestParser(request);
 
 			(MyLogger.getLogger()).log(Level.INFO, "\n RequestLine:" +request.getRequestLine() +"\n Headers:"+request.getHeaders() + "\n Body:"+request.getBody());
-
 
 			if(request.getMethod().equals(HttpConstants.GET) || request.getMethod().equals(HttpConstants.POST)) {
 				if(!request.getHttpVersion().trim().equals("")) {
@@ -87,17 +90,14 @@ public class HttpServer implements Runnable{
 					}
 					else {
 						(MyLogger.getLogger()).log(Level.INFO, "Page not found in server");
-						response.setHeader(HttpConstants.PAGE_NOT_FOUND_HEADER);
-						pageNotFoundHtml(response);
+						ErrorPages.pageNotFoundHtml(response);
 					}
 				}else {
-					response.setHeader(HttpConstants.BAD_REQUEST);
-					BadRequestHtml(response);
+					ErrorPages.BadRequestHtml(response);
 				}
 			}else {
 				(MyLogger.getLogger()).log(Level.INFO, "Method not found in server");
-				response.setHeader(HttpConstants.METHOD_NOT_FOUND_HEADER);
-				MethodNotFoundHtml(response);
+				ErrorPages.MethodNotFoundHtml(response);
 			}
 			if(!response.getHtmlPage().trim().equals("")) {
 				writer.write(response.getHeader());
@@ -131,31 +131,5 @@ public class HttpServer implements Runnable{
 			b = (byte) instream.read();
 		}
 		return new String(bout.toByteArray());
-	}
-
-	public void pageNotFoundHtml(HTTPResponse response) {
-		HtmlBuilder html = new HtmlBuilder();
-		html.setTitle("Page Not Found");
-		StringBuilder pageNotFound = html.head();
-		pageNotFound = html.pageNotFoundPage(pageNotFound);
-		response.setHtmlPage(pageNotFound.toString());
-	}
-
-	public void MethodNotFoundHtml(HTTPResponse response) {
-		HtmlBuilder html = new HtmlBuilder();
-		html.setTitle("Method Not Found");
-		StringBuilder methodNotFoundBuilder = html.head();
-		methodNotFoundBuilder = html.methodNotFoundPage(methodNotFoundBuilder);
-		response.setHtmlPage(methodNotFoundBuilder.toString());
-		response.setHeader(HttpConstants.METHOD_NOT_FOUND_HEADER);
-	}
-
-	public void BadRequestHtml(HTTPResponse response) {
-		HtmlBuilder html = new HtmlBuilder();
-		html.setTitle("Bad Request");
-		StringBuilder badRequestBuilder = html.head();
-		badRequestBuilder = html.badRequestPage(badRequestBuilder);
-		response.setHtmlPage(badRequestBuilder.toString());
-		response.setHeader(HttpConstants.BAD_REQUEST);
 	}
 }

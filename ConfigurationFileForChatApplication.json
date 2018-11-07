@@ -1,1 +1,1 @@
-{"port": 8090, "loggerFile" : "ChatAppLoggerFile.txt","channel": "#project3", "token": "Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782", "poolSize": 5}
+{"port": 9090, "loggerFile" : "ChatAppLoggerFile.txt","channel": "#project3", "token": "Bearer xoxp-378520430422-427334692002-470002633843-7b758cd102fc6933f113ed636a24d782", "poolSize": 5}

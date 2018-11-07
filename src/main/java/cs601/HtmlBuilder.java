@@ -2,9 +2,15 @@ package cs601;
 
 import java.util.ArrayList;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import SearchApplicationInvertedIndex.QA;
 import SearchApplicationInvertedIndex.Review;
 
+/**
+ * @author manalipatil
+ *
+ */
 public class HtmlBuilder {
 
 	private String title;
@@ -15,7 +21,9 @@ public class HtmlBuilder {
 	private ArrayList<Review> reviews;
 	private ArrayList<QA> qas;
 
-
+	/**
+	 * Constructor
+	 */
 	public HtmlBuilder() {
 		this.title = "";
 		this.labelName = "";
@@ -80,6 +88,11 @@ public class HtmlBuilder {
 		return reviews;
 	}
 
+	
+	/**
+	 * Generates head of the response html
+	 * @return StringBuilder to be updated
+	 */
 	public StringBuilder head() {
 		StringBuilder html = new StringBuilder();
 
@@ -92,25 +105,40 @@ public class HtmlBuilder {
 		return html;
 	}
 
+	/**
+	 * Appends <body> to StringBuilder
+	 * @param html StringBuilder to be updated
+	 * @return updated StringBuilder  
+	 */
 	public StringBuilder startBody(StringBuilder html) {
 		html.append("<body>");
 		return html;
 	}
+	
+	/**
+	 * Appends form to StringBuilder
+	 * @param html StringBuilder to be updated
+	 * @return updated StringBuilder  
+	 */
 	public StringBuilder createForm(StringBuilder html) {
 		
-		html.append("<form action=" + action + " method=" + method +">");
+		html.append("<form action=\"" + action +"\" method=\"" + method +"\">");
 		html.append("<label for = \""+labelName+"\">"+ labelName +"</label>");
-		html.append("<input name=\""+id+"\" id=\""+id+"\" />");
+		html.append("<input name=\""+id+"\" id=\""+id+"\"></input>");
 		html.append("<input type=\"submit\"></input>");
 		html.append("</form>");
 		return html;
 	}
 
+	/**
+	 * Appends table for Review Search to StringBuilder
+	 * @param html StringBuilder to be updated
+	 * @return updated StringBuilder  
+	 */
 	public StringBuilder createTableForReview(StringBuilder html) {
 		html.append("<body>");
 		if(this.reviews != null) {
-			html.append("<table style=\"border-top: 5px solid red;\" id=\""+ id +"\">");
-			html.append("<tr>");
+			html.append("<table id=\""+ id +"\">");
 			html.append("<tr>");
 			html.append("<th>");
 			html.append("Review ID");
@@ -129,7 +157,7 @@ public class HtmlBuilder {
 					html.append(review.getReviewerID());
 					html.append("</td>");
 					html.append("<td>");
-					html.append(review.getReviewText());
+					html.append(StringEscapeUtils.escapeHtml4(review.getReviewText()));
 					html.append("</td>");
 					html.append("<td>");
 					html.append(review.getAsin());
@@ -142,18 +170,20 @@ public class HtmlBuilder {
 		else {
 			html.append("<h3>Search not found</h3>");
 		}
-		//		html.append("</body>");
-		//		html.append("</html>");
 		return html;
 	}
 	
+	/**
+	 * Appends Table for QA's to StringBuilder
+	 * @param html StringBuilder to be updated
+	 * @return updated StringBuilder  
+	 */
 	public StringBuilder createTableForQAs(StringBuilder html) {
 		html.append("<br/>");
 		html.append("<br/>");
 		html.append("<br/>");
 		if(this.qas != null) {
-			html.append("<table style=\"border-top: 5px solid red;\" id=\""+ id +"\">");
-			html.append("<tr>");
+			html.append("<table id=\""+ id +"\">");
 			html.append("<tr>");
 			html.append("<th>");
 			html.append("Question:");
@@ -169,10 +199,10 @@ public class HtmlBuilder {
 				if(qa != null) {
 					html.append("<tr>");
 					html.append("<td>");
-					html.append(qa.getQuestion());
+					html.append(StringEscapeUtils.escapeHtml4(qa.getQuestion()));
 					html.append("</td>");
 					html.append("<td>");
-					html.append(qa.getAnswer());
+					html.append(StringEscapeUtils.escapeHtml4(qa.getAnswer()));
 					html.append("</td>");
 					html.append("<td>");
 					html.append(qa.getAsin());
@@ -185,17 +215,25 @@ public class HtmlBuilder {
 		else {
 			html.append("<h3>Search not found</h3>");
 		}
-		//		html.append("</body>");
-		//		html.append("</html>");
 		return html;
 	}
 
+	/**
+	 * Appends close html to StringBuilder
+	 * @param html StringBuilder to be updated
+	 * @return complete html  
+	 */
 	public StringBuilder closeHtml(StringBuilder html){
 		html.append("</body>");
 		html.append("</html>");
 		return html;
 	}
 
+	/**
+	 * Appends method not found html to StringBuilder
+	 * @param html StringBuilder to be updated
+	 * @return complete html  
+	 */
 	public StringBuilder methodNotFoundPage(StringBuilder html) {
 		html.append("<body>");
 		html.append("<h3>Method Not Found</h3>");
@@ -204,6 +242,11 @@ public class HtmlBuilder {
 		return html;
 	}
 
+	/**
+	 * Appends valid slack response html to StringBuilder
+	 * @param html StringBuilder to be updated
+	 * @return complete html  
+	 */
 	public StringBuilder slackResponsePage(StringBuilder html) {
 		html.append("<body>");
 		html.append("<h3>Message is sent</h3>");
@@ -213,6 +256,11 @@ public class HtmlBuilder {
 		return html;
 	}
 
+	/**
+	 * Appends invalid slack response html to StringBuilder
+	 * @param html StringBuilder to be updated
+	 * @return complete html  
+	 */
 	public StringBuilder slackInvalidResponsePage(StringBuilder html) {
 		html.append("<body>");
 		html.append("<h3>Message not sent</h3>");
@@ -222,6 +270,11 @@ public class HtmlBuilder {
 		return html;
 	}
 
+	/**
+	 * Appends page not found html to StringBuilder
+	 * @param html StringBuilder to be updated
+	 * @return complete html  
+	 */
 	public StringBuilder pageNotFoundPage(StringBuilder html) {
 		html.append("<body>");
 		html.append("<h3>Page Not Found</h3>");
@@ -230,6 +283,11 @@ public class HtmlBuilder {
 		return html;
 	}
 	
+	/**
+	 * Appends bad request html to StringBuilder
+	 * @param html StringBuilder to be updated
+	 * @return complete html  
+	 */
 	public StringBuilder badRequestPage(StringBuilder html) {
 		html.append("<body>");
 		html.append("<h3>Bad Request</h3>");
