@@ -22,7 +22,7 @@ public class ErrorPages {
 	 * Builds a form for Method Not Found
 	 * @param response the object to be updated 
 	 */
-	public static void MethodNotFoundHtml(HTTPResponse response) {
+	public static void methodNotFoundHtml(HTTPResponse response) {
 		HtmlBuilder html = new HtmlBuilder();
 		html.setTitle("Method Not Found");
 		StringBuilder methodNotFoundBuilder = html.head();
@@ -36,7 +36,7 @@ public class ErrorPages {
 	 * Builds a form for Bad Request
 	 * @param response the object to be updated 
 	 */
-	public static void BadRequestHtml(HTTPResponse response) {
+	public static void badRequestHtml(HTTPResponse response) {
 		HtmlBuilder html = new HtmlBuilder();
 		html.setTitle("Bad Request");
 		StringBuilder badRequestBuilder = html.head();

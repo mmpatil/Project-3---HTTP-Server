@@ -30,7 +30,7 @@ public class ChatHandler implements Handler{
 			doPost(request,response);
 		}
 		else {
-			this.doMethodNotFound(response);
+			ErrorPages.methodNotFoundHtml(response);
 		}
 	}
 	
@@ -92,7 +92,7 @@ public class ChatHandler implements Handler{
 			}
 		}
 		else {
-			badRequestHtml(response);
+			ErrorPages.badRequestHtml(response);
 		}
 	}
 
@@ -163,32 +163,5 @@ public class ChatHandler implements Handler{
 			(MyLogger.getLogger()).log(Level.SEVERE, "Error in connection object of HttpsUrlConnection:"+e.getMessage());
 		}
 		return response.getHeader();
-	}
-
-	
-	/**
-	 * Builds a form for Method Not found
-	 * @param response the object to be updated 
-	 */
-	public void doMethodNotFound(HTTPResponse response) {
-		HtmlBuilder html = new HtmlBuilder();
-		html.setTitle("Method Not Found");
-		StringBuilder methodNotFoundBuilder = html.head();
-		methodNotFoundBuilder = html.methodNotFoundPage(methodNotFoundBuilder);
-		response.setHtmlPage(methodNotFoundBuilder.toString());
-		response.setHeader(HttpConstants.METHOD_NOT_FOUND_HEADER + "Content-Lenght: "+ ErrorPages.getContentLenght(methodNotFoundBuilder.toString())+"\n\r\n");
-	}
-
-	/**
-	 * Builds a form for Bad Request
-	 * @param response the object to be updated 
-	 */
-	public void badRequestHtml(HTTPResponse response) {
-		HtmlBuilder html = new HtmlBuilder();
-		html.setTitle("Bad Request");
-		StringBuilder badRequestBuilder = html.head();
-		badRequestBuilder = html.badRequestPage(badRequestBuilder);
-		response.setHtmlPage(badRequestBuilder.toString());
-		response.setHeader(HttpConstants.BAD_REQUEST + "Content-Lenght: "+ ErrorPages.getContentLenght(badRequestBuilder.toString())+"\n\r\n");
 	}
 }

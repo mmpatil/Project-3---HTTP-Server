@@ -8,7 +8,6 @@ public class RequestParser {
 	private String[] requestLineParts;
 	private String[] pathAndQueries;
 	private String[] queries;
-
 	private HashMap<String,String> queriesHashmap = new HashMap<String,String>();
 
 	public RequestParser() {
