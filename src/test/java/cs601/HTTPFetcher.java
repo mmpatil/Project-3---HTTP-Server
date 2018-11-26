@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.Socket;
 
-
 public class HTTPFetcher {
 
 	private static String requestLine;
@@ -123,6 +122,20 @@ public class HTTPFetcher {
 		}
 	}
 
+	public static String httpGet(String url) {
+		String[] requestUri = url.split(":");
+		String[] r = requestUri[2].split("/");
+		String host = r[0];
+		String path = r[1];
+		String request = "";
+		request = "GET"+" " + path + " HTTP/1.1" + "\n" //GET request
+				+ "Host: " + host + "\n" //Host header required for HTTP/1.1
+				+ "Connection: close\n" //make sure the server closes the connection after we fetch one page
+				+ "\r\n";   
+		return request;
+	}
+	
+	
 	/**
 	 * Generate a request in a valid format
 	 * @param host hostname on which the application is running
