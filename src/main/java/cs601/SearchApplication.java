@@ -1,13 +1,8 @@
 package cs601;
 
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,6 +13,22 @@ public class SearchApplication {
 
 	private static InvertedIndex index ;
 	private static ConfigurationFileForSearch configuration ;
+	private static int port;
+	private static int poolSize;
+
+	/**
+	 * Setting the port from the configuration file
+	 */
+	public static void setPort() {
+		SearchApplication.port = configuration.getPort();
+	}
+
+	/**
+	 * Setting the poolSize from the configuration file
+	 */
+	public static void setPoolSize() {
+		SearchApplication.poolSize = configuration.getPoolSize();
+	}
 	
 	/**
 	 * Constructor
@@ -26,7 +37,8 @@ public class SearchApplication {
 	public SearchApplication(Path path) {
 		configuration = ConfigurationFileForSearch.getConfigurations(path);
 		index = AmazonSearch.createInvertedIndex(configuration.getReviewInputFiles(),configuration.getQaInputFiles());
-//		this.index = AmazonSearch.createInvertedIndex("Cell_Phones_and_Accessories_5.json","qa_Cell_Phones_and_Accessories.json");
+		setPort();
+		setPoolSize();
 	}
 
 	public static void main(String[] args) {
@@ -45,28 +57,19 @@ public class SearchApplication {
 	}
 
 	/**
-	 * Starts the listening socket for this application
+	 * Starts the application server
 	 * @param configuration Configurations for this application
 	 */
 	public void startApplication(ConfigurationFileForSearch configuration) {
-		try {
-			ServerSocket serverSocket = new ServerSocket(configuration.getPort());
-
-			(MyLogger.getLogger()).log(Level.INFO, "Server started...");
-
-			ExecutorService executor = Executors.newFixedThreadPool(configuration.getPoolSize());
-
-			while(true) {
-				Socket socket = serverSocket.accept();
-				HttpServer httpServer = new HttpServer(socket); 
-				httpServer.addMapping("/reviewsearch", new ReviewSearchHandler(this.index));
-				httpServer.addMapping("/find", new FindHandler(this.index));
-
-				executor.execute(httpServer);
-			}
-		} catch (IOException e) {
-			(MyLogger.getLogger()).log(Level.SEVERE, "Problem in server socket :"+e.getMessage());
-		}
+		
+		HttpServer server = new HttpServer();
+		
+		//add mappings
+		server.addMappingtoRequestHandler("/reviewsearch", new ReviewSearchHandler(this.index));
+		server.addMappingtoRequestHandler("/find", new FindHandler(this.index));
+		
+		//start server
+		server.startServer(port,poolSize);
 	}
 
 	/**
